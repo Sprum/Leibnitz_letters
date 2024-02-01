@@ -7,6 +7,8 @@ import re
 
 Missing_headings = (38, 50, 53, 66, 97, 103, 149, 187, 214, 237, 242, 250, 342)
 
+title_regex = re.compile(r"^\d{2,3}\.", re.IGNORECASE)
+
 def detect_letter_start(text):
     # Regular expression to match lines starting with page number and "nr."
 
@@ -61,20 +63,24 @@ def master_func(book: list):
         # detect if special page: !startswith number
         lines = page.split('\n')
         # read first line
-        line = lines[0]
-        if not identifier in line:
-            print(f"found special page:\n-----\n{line}")
+        first_line = lines[0]
+        if not identifier in first_line:
+            print(f"found special page:\n-----\n{first_line}")
         else:
             # check if two letters on one page
-            has_two_letters = re.search(two_letters, line)
+            has_two_letters = re.search(two_letters, first_line)
             if has_two_letters:
                 l1, l2 = has_two_letters.groups()
-                print(f"letter1: {l1} | letter2: {l2}")
+                print(f"letter1: {l1} | letter2: {l2}, attempting to find titles:")
                 # Todo: handle two letters on one page
+                hits = [(idx, match) for idx, s_line in enumerate(lines) if (match := re.search(title_regex, s_line))]
+                letter1 = '\n'.join(lines[hits[0][0]:hits[1][0]])
+                letter2 = '\n'.join(lines[hits[1][0]:])
 
+            # might need to only execute this on one letter pages
             # get letter number from header
-            substr_idx = line.find(identifier)+len(identifier)
-            integers = re.findall(r'\d+', line[substr_idx:substr_idx+4])
+            substr_idx = first_line.find(identifier)+len(identifier)
+            integers = re.findall(r'\d+', first_line[substr_idx:substr_idx+4])
             # Convert the matched strings to actual integers
             letter_number = [int(num) for num in integers][0]
 
