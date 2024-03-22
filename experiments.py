@@ -16,8 +16,9 @@ def main():
         content = reader.pages[page].extract_text()
         book.append(content)
 
-    master_func(book)
+    letters = master_func(book)
+    for key, val in letters.items():
 
-
+        print(f"{key}: {val}")
 if __name__ == "__main__":
     main()

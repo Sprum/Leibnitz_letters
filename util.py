@@ -9,6 +9,7 @@ Missing_headings = (38, 50, 53, 66, 97, 103, 149, 187, 214, 237, 242, 250, 342)
 
 title_regex = re.compile(r"^\d{2,3}\.", re.IGNORECASE)
 
+
 def detect_letter_start(text):
     # Regular expression to match lines starting with page number and "nr."
 
@@ -54,6 +55,7 @@ def master_func(book: list):
     letters = dict()
     active_letter = 0
     active_letter_content = None
+
     # regex patterns
     identifier = "nr. "
     two_letters = r"(\d+) /(\d+)"
@@ -69,44 +71,60 @@ def master_func(book: list):
         else:
             # check if two letters on one page
             has_two_letters = re.search(two_letters, first_line)
+            # if two letters on one page, we need to handle it: we split the page on the headings
             if has_two_letters:
-                l1, l2 = has_two_letters.groups()
-                print(f"letter1: {l1} | letter2: {l2}, attempting to find titles:")
-                # Todo: handle two letters on one page
+                l1_num, l2_num = has_two_letters.groups()
+                print(f"letter1: {l1_num} | letter2: {l2_num}, attempting to find titles:")
+
                 hits = [(idx, match) for idx, s_line in enumerate(lines) if (match := re.search(title_regex, s_line))]
                 letter1 = '\n'.join(lines[hits[0][0]:hits[1][0]])
                 letter2 = '\n'.join(lines[hits[1][0]:])
+                # add letters to dict
+                letters[active_letter] = active_letter_content
 
-            # might need to only execute this on one letter pages
+                letters[int(l1_num)] = letter1
+                letters[int(l2_num)] = letter2  # TODO: check if double letters can have second letter span on next page.
+                active_letter = int(l2_num)
+                active_letter_content = letter2
             # get letter number from header
-            substr_idx = first_line.find(identifier)+len(identifier)
-            integers = re.findall(r'\d+', first_line[substr_idx:substr_idx+4])
+            substr_idx = first_line.find(identifier) + len(identifier)
+            integers = re.findall(r'\d+', first_line[substr_idx:substr_idx + 4])
             # Convert the matched strings to actual integers
             letter_number = [int(num) for num in integers][0]
 
             # compare line to state of current letter: number after 'nr. ' substring
-            if letter_number > active_letter:   # Page contains a new letter
+            if letter_number > active_letter:  # Page contains a new letter
+                # if its a new letter, first we need to save the last letter
+                letters[active_letter] = active_letter_content
+                # TODO: das hier könnte was gebrochen haben
+                # reset letter content
+                active_letter_content = ""
+                # then set new letter number as active letter
                 active_letter = letter_number
                 # handle the first letter
                 if letter_number == 1:
                     active_letter_content = page
                     print("Heading: 1. nbla bla")
+                # TODO: findout where to place handling for letter before first letter if two letters hit
                 else:
                     # detect "idx" of new letter start
-                    for i_line in range(1,len(lines)):
+                    for i_line in range(1, len(lines)):
                         if lines[i_line].startswith(str(letter_number)):
                             print(f"Heading: {lines[i_line]}")
-                    pass
+                            print(lines[i_line:])
+
                     # slice page before idx of new letter start
                     # concat page before new letter to page before
                     # add concatted letter before to a list
 
-            else:   # page contains same letter as last page
+            else:  # page contains same letter as last page
                 # concat current page to active letters content
-                active_letter_content += f"\n{page}"
+                active_letter_content += f"{page}\n"
 
-
-
+    # if __name__ == "__main__":
+    comp_list = list(range(0, 382))
+    print(comp_list)
+    print(list(letters.keys()))
     # if read letter == current letter: concat to page before
     # return list of letters
-
+    return letters
