@@ -3,7 +3,6 @@ import os
 from tqdm.auto import tqdm
 import re
 
-# TODO: missing headings: Seiten, bei denen zwei neue Briefe beginnen → handeln!
 
 Missing_headings = (38, 50, 53, 66, 97, 103, 149, 187, 214, 237, 242, 250, 342)
 
@@ -50,7 +49,7 @@ def read_txts(dir):
                 lines = file.readlines()
 
 
-def master_func(book: list):
+def split_into_letters(book: list):
     # init letters list and states
     letters = dict()
     active_letter = 0
@@ -96,13 +95,10 @@ def master_func(book: list):
             if letter_number > active_letter:  # Page contains a new letter
                 # if its a new letter, first we need to save the last letter
                 letters[active_letter] = active_letter_content
-                # TODO: das hier könnte was gebrochen haben
-                # reset letter content
-                active_letter_content = ""
-                # then set new letter number as active letter
-                active_letter = letter_number
+
                 # handle the first letter
                 if letter_number == 1:
+                    active_letter = 1
                     active_letter_content = page
                     print("Heading: 1. nbla bla")
                 # TODO: findout where to place handling for letter before first letter if two letters hit
@@ -110,12 +106,17 @@ def master_func(book: list):
                     # detect "idx" of new letter start
                     for i_line in range(1, len(lines)):
                         if lines[i_line].startswith(str(letter_number)):
-                            print(f"Heading: {lines[i_line]}")
-                            print(lines[i_line:])
-
+                            idx_of_heading = i_line
+                            print(f"Heading: {lines[idx_of_heading]}")
+                            break
                     # slice page before idx of new letter start
                     # concat page before new letter to page before
-                    # add concatted letter before to a list
+                    active_letter_content += f"{''.join(lines[:idx_of_heading])}\n"
+                    letters[active_letter] = active_letter_content
+                    # then set new letter number as active letter
+                    active_letter = letter_number
+                    # set new letter content as active letter content
+                    active_letter_content = "".join(lines[idx_of_heading:])
 
             else:  # page contains same letter as last page
                 # concat current page to active letters content
@@ -125,6 +126,4 @@ def master_func(book: list):
     comp_list = list(range(0, 382))
     print(comp_list)
     print(list(letters.keys()))
-    # if read letter == current letter: concat to page before
-    # return list of letters
     return letters

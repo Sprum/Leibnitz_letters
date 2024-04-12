@@ -1,7 +1,7 @@
-from util import detect_letter_start
+from util import detect_letter_start, write_page
 from tqdm.auto import tqdm
 import PyPDF2 as pdf
-from util import master_func
+from util import split_into_letters
 
 
 def main():
@@ -15,10 +15,15 @@ def main():
     for page in tqdm(range(7, 789)):
         content = reader.pages[page].extract_text()
         book.append(content)
-
-    letters = master_func(book)
+    num_empty_letters = 0
+    empty_letters = []
+    letters = split_into_letters(book)
     for key, val in letters.items():
+        if key == 0:
+            pass
+        else:
+            write_page(val, f"letters/brief_{key}")
 
-        print(f"{key}: {val}")
+
 if __name__ == "__main__":
     main()

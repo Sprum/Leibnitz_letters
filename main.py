@@ -1,16 +1,10 @@
+from tqdm import tqdm
 import PyPDF2 as pdf
-import spacy
 
-from util import save_pages_to_drive
-from tqdm.auto import tqdm
+from util import split_into_letters, write_page
 
-SAVE = True
-# pages containing only images etc.
-SPECIAL_PAGES = [176, 247, 403, 501, 583]
-# load spacy model for NER
-nlp = spacy.load('de_core_news_sm')
 
-if __name__ == "__main__":
+def main():
     # read in PDF of book
     file = open("Briefwechsel.pdf", "rb")
     reader = pdf.PdfReader(file)
@@ -21,11 +15,15 @@ if __name__ == "__main__":
     for page in tqdm(range(7, 789)):
         content = reader.pages[page].extract_text()
         book.append(content)
+    num_empty_letters = 0
+    empty_letters = []
+    letters = split_into_letters(book)
+    for key, val in letters.items():
+        if key == 0:
+            pass
+        else:
+            write_page(val, f"letters/brief_{key}")
 
-    # save pages as txt if SAVE true
-    if SAVE:
-        save_pages_to_drive(book)
 
-
-
-
+if __name__ == "__main__":
+    main()
