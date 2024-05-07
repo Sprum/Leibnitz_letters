@@ -27,9 +27,21 @@ if __name__ == "__main__":
     path=Path("letters/cleaned")
     # read_txts
     letter_paths = [i for i in path.iterdir() if i.is_file()]
-    # for temp_path in letter_paths:
-    letter = read_file(letter_paths[0])
-    doc = get_entities_letter(letter)
-    for entity in doc.ents:
-        if entity.label_ == 'LOC':
-            print(entity, entity.label_)
+
+    ents_loc = {}
+
+    for i in letter_paths:
+        letter = read_file(i)
+        doc = get_entities_letter(letter)
+        for entity in doc.ents:
+            if entity.label_ == 'LOC':
+                loc = entity
+                if ents_loc.get(loc):
+                    ents_loc[loc] += 1
+                    # LoGIK KAPUTT, SCHREIBT ALLES AUF 0 wahrscheinlich entity.text oder so, naja
+                else:
+                    ents_loc[loc]= 0
+
+
+    print(f"unique entities: {len(ents_loc)}")
+    print(ents_loc)
