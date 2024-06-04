@@ -1,0 +1,17 @@
+//Prompt for mapping of the letters
+I will give you a table of contents for the edited letters of sophie von Hannover and Leibnitz. each of the entries has the following format: 
+[page number] [letter number] [description/title of the letter]
+the description starts with the author of the letter and contains the place the letter was sent from as well as the year of the letter.
+i want you to make a dictionary mapping the letter number as a key to a tuple containing the author of the letter followed by the place the letter was sent from and the year of the letter.
+
+example:
+input:
+7 1. Leibniz an Herzogin Sophie, Hannover, 9./19. Januar (?) 1680
+10 2. Leibniz an Herzogin Sophie, Zellerfeld, 5. (15.) Januar 1684
+12 3. Leibniz für Herzogin Sophie, Epigramm zu einer Medaille der
+Herzogin, Hannover, 1684 (?)
+13 4. Herzogin Sophie an Leibniz, Hannover, 4./14. April 1688
+output:
+letter_map = {1:("Leibnitz", "Hannover",1680), 2:("Leibnitz", "Zellerfeld",1684), 3:("Leibnitz", "Hannover",1684), 3:("Sophie", "Hannover",1688)
+
+input:

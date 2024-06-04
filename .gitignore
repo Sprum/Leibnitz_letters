@@ -3,3 +3,4 @@
 /letters
 /Briefwechsel.pdf
 .env
+*.lock
