@@ -5,7 +5,6 @@ import pandas as pd
 from tqdm.auto import tqdm
 import re
 
-
 Missing_headings = (38, 50, 53, 66, 97, 103, 149, 187, 214, 237, 242, 250, 342)
 
 title_regex = re.compile(r"^\d{2,3}\.", re.IGNORECASE)
@@ -50,6 +49,7 @@ def read_txts(dir):
             with open(filepath, 'r', encoding='utf-8') as file:
                 lines = file.readlines()
 
+
 def replace_string_in_dataframe(df, old_string, new_string):
     """
     Method to replace
@@ -61,6 +61,14 @@ def replace_string_in_dataframe(df, old_string, new_string):
     # Replace occurrences of the old_string with the new_string in the 'Place' column
     df['Place'] = df['Place'].str.replace(old_string, new_string, regex=False)
     return df
+
+
+def check_newline_in_place(df):
+    # Check for newline characters in the 'Place' column
+    for index, place in df['Place'].items():
+        if '\n' in place:
+            return True, index, place
+    return False, None, None
 
 
 def split_into_letters(book: list):
@@ -96,7 +104,8 @@ def split_into_letters(book: list):
                 letters[active_letter] = active_letter_content
 
                 letters[int(l1_num)] = letter1
-                letters[int(l2_num)] = letter2  # TODO: check if double letters can have second letter span on next page.
+                letters[
+                    int(l2_num)] = letter2  # TODO: check if double letters can have second letter span on next page.
                 active_letter = int(l2_num)
                 active_letter_content = letter2
             # get letter number from header
@@ -141,11 +150,14 @@ def split_into_letters(book: list):
     print(list(letters.keys()))
     return letters
 
+
 if __name__ == '__main__':
     paths = [path for path in Path("./data/per letter").iterdir()]
 
     for path in paths:
         df = pd.read_csv(path)
-        new_df = replace_string_in_dataframe(df, "Wiener Neustadt", "Wien")
-        new_df.to_csv(path, index=False)
-
+        # new_df = replace_string_in_dataframe(df, "Wiener Neustadt", "Wien")
+        # new_df.to_csv(path, index=False)
+        needs_love,_,_ = check_newline_in_place(df)
+        if needs_love:
+            print(needs_love, path)
