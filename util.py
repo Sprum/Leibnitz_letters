@@ -1,5 +1,7 @@
 import os
+from pathlib import Path
 
+import pandas as pd
 from tqdm.auto import tqdm
 import re
 
@@ -47,6 +49,18 @@ def read_txts(dir):
             # Read lines from the file and append to the list
             with open(filepath, 'r', encoding='utf-8') as file:
                 lines = file.readlines()
+
+def replace_string_in_dataframe(df, old_string, new_string):
+    """
+    Method to replace
+    :param df:
+    :param old_string:
+    :param new_string:
+    :return:
+    """
+    # Replace occurrences of the old_string with the new_string in the 'Place' column
+    df['Place'] = df['Place'].str.replace(old_string, new_string, regex=False)
+    return df
 
 
 def split_into_letters(book: list):
@@ -122,8 +136,16 @@ def split_into_letters(book: list):
                 # concat current page to active letters content
                 active_letter_content += f"{page}\n"
 
-    # if __name__ == "__main__":
     comp_list = list(range(0, 382))
     print(comp_list)
     print(list(letters.keys()))
     return letters
+
+if __name__ == '__main__':
+    paths = [path for path in Path("./data/per letter").iterdir()]
+
+    for path in paths:
+        df = pd.read_csv(path)
+        new_df = replace_string_in_dataframe(df, "Wiener Neustadt", "Wien")
+        new_df.to_csv(path, index=False)
+
