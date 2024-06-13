@@ -156,8 +156,5 @@ if __name__ == '__main__':
 
     for path in paths:
         df = pd.read_csv(path)
-        # new_df = replace_string_in_dataframe(df, "Wiener Neustadt", "Wien")
-        # new_df.to_csv(path, index=False)
-        needs_love,_,_ = check_newline_in_place(df)
-        if needs_love:
-            print(needs_love, path)
+        new_df = replace_string_in_dataframe(df, "Königreichs Polen", "Polen")
+        new_df.to_csv(path, index=False)

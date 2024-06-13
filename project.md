@@ -10,3 +10,4 @@ Dinge die beim cleanen rausgefallen sind:
 * bestimmte Orte in einer Stadt -> pariser Kathedrale zu Paris 339
 * Landes-/Ortsnamen als adjektive -> aus Pariser [...] wird Paris
 * Orte in Titeln -> Graf von Bückeburg zu Bückeburg 348
+* adjektive von ortschaften oder ethnizitäten etc. -> Flämisch wird zu Flandern
