@@ -11,3 +11,5 @@ Dinge die beim cleanen rausgefallen sind:
 * Landes-/Ortsnamen als adjektive -> aus Pariser [...] wird Paris
 * Orte in Titeln -> Graf von Bückeburg zu Bückeburg 348
 * adjektive von ortschaften oder ethnizitäten etc. -> Flämisch wird zu Flandern
+* Großpolen zu Polen
+* Städte, die heute anders heißen -> Åbo zu Turku

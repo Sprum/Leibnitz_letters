@@ -156,5 +156,5 @@ if __name__ == '__main__':
 
     for path in paths:
         df = pd.read_csv(path)
-        new_df = replace_string_in_dataframe(df, "Königreichs Polen", "Polen")
+        new_df = replace_string_in_dataframe(df, "Hannovers", "Hannover")
         new_df.to_csv(path, index=False)
