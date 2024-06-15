@@ -23,8 +23,20 @@ def rename_files(input_dir, output_dir):
             with open(os.path.join(output_dir, new_filename), 'w') as file:
                 file.write(content)
 
+
+def rename_file_from_to(path: str, to: str, suffix: str):
+    for filename in os.listdir(path):
+        if filename.endswith(suffix):
+            new_filename = filename.split("_")[-1]
+            print(new_filename)
+
+            with open(os.path.join(path, filename), 'r') as file:
+                content = file.read()
+            with open(os.path.join(to, new_filename), 'w') as file:
+                file.write(content)
+
 if __name__ == "__main__":
     # Example usage:
-    input_directory = r"C:\Eigene Dateien\Uni\Master\AAA"
-    output_directory = "letters/cleaned"
-    rename_files(input_directory, output_directory)
+    input_directory = "data/archive"
+    output_directory = "data/per letter"
+    rename_file_from_to(input_directory, output_directory, ".csv")
