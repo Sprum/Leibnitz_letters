@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+from typing import Dict, List
 
 import pandas as pd
 from tqdm.auto import tqdm
@@ -160,7 +161,25 @@ def sum_all_places():
     for path in paths:
         df = pd.read_csv(path)
         df = df.groupby('Place', as_index=False)['Count'].sum()
-        df.to_csv(path)
+        df.to_csv(path, index=False)
+
+
+def search_in_place_column(paths: List[Path], search_str: str) -> Dict[Path, pd.DataFrame]:
+    result = {}
+
+    for path in paths:
+        df = pd.read_csv(path)
+
+        # Check if 'Place' column exists in the DataFrame
+        if 'Place' in df.columns:
+            # Filter the DataFrame for rows where 'Place' contains the search string
+            filtered_df = df[df['Place'].str.contains(search_str, case=False, na=False)]
+
+            # If there are matching rows, add to the result dictionary
+            if not filtered_df.empty:
+                result[path] = filtered_df
+
+    return result
 
 if __name__ == '__main__':
     paths = [path for path in Path("./data/per letter").iterdir()]
@@ -169,3 +188,4 @@ if __name__ == '__main__':
         df = pd.read_csv(path)
         df = df.groupby('Place', as_index=False)['Count'].sum()
         df.to_csv(path, index=False)
+
