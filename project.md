@@ -13,3 +13,53 @@ Dinge die beim cleanen rausgefallen sind:
 * adjektive von ortschaften oder ethnizitäten etc. -> Flämisch wird zu Flandern
 * Großpolen zu Polen
 * Städte, die heute anders heißen -> Åbo zu Turku
+* Städte die im Briefverzeichnis anders aufgeführt werden wie in der absender zeile -> Ebsdorff zu Ebstorf
+
+TODO: als nächstes
+1. schauen nach Ortsnennung als Absende oder empfänger ort *canceled*
+2. dann aggregieren nach
+   1. Person
+   2. Jahr
+   3. Zählen: 
+   4. 102
+103
+115
+127
+146
+193
+194
+213
+216
+236
+237
+240
+242
+243
+249
+253
+280
+289
+303
+31
+317
+344
+35
+351
+354
+36
+360
+364
+37
+375
+41
+44
+49
+50
+52
+53
+56
+79
+87
+93
+96
+das sind alle Briefe von Sophie bei denen der absende ort nicht in der csv gefunden wurde...

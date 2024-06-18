@@ -150,11 +150,22 @@ def split_into_letters(book: list):
     print(list(letters.keys()))
     return letters
 
+def sum_all_places():
+    """
+    sums up all places per csv so they are unique
+    :return:
+    """
+    paths = [path for path in Path("./data/per letter").iterdir()]
+
+    for path in paths:
+        df = pd.read_csv(path)
+        df = df.groupby('Place', as_index=False)['Count'].sum()
+        df.to_csv(path)
 
 if __name__ == '__main__':
     paths = [path for path in Path("./data/per letter").iterdir()]
 
     for path in paths:
         df = pd.read_csv(path)
-        new_df = replace_string_in_dataframe(df, "Hannovers", "Hannover")
-        new_df.to_csv(path, index=False)
+        df = df.groupby('Place', as_index=False)['Count'].sum()
+        df.to_csv(path, index=False)
