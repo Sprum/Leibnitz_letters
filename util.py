@@ -181,11 +181,16 @@ def search_in_place_column(paths: List[Path], search_str: str) -> Dict[Path, pd.
 
     return result
 
-if __name__ == '__main__':
-    paths = [path for path in Path("./data/per letter").iterdir()]
 
+def delete_entry(paths: List[Path], search_str: str):
     for path in paths:
         df = pd.read_csv(path)
-        df = df.groupby('Place', as_index=False)['Count'].sum()
-        df.to_csv(path, index=False)
+        # Filter out the rows where 'Place' contains the search string
+        filtered_df = df[~df['Place'].str.contains(search_str, case=False, na=False)]
+        # Save the filtered DataFrame back to the original CSV file
+        filtered_df.to_csv(path, index=False)
+
+if __name__ == '__main__':
+    paths = [path for path in Path("./data/per letter").iterdir()]
+    delete_entry(paths,"Klencke")
 

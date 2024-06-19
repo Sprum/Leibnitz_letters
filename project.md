@@ -15,13 +15,16 @@ Dinge die beim cleanen rausgefallen sind:
 * Städte, die heute anders heißen -> Åbo zu Turku
 * Städte die im Briefverzeichnis anders aufgeführt werden wie in der absender zeile -> Ebsdorff zu Ebstorf
 
+### Geocoding
+* MMQGIS
+
 TODO: als nächstes
-1. schauen nach Ortsnennung als Absende oder empfänger ort *canceled*
-2. dann aggregieren nach
-   1. Person
-   2. Jahr
-   3. Zählen: 
-   4. 102
+1. Geocoden
+2. letztes mal cleanen?
+3. vlt auch nach Absendeort aggregieren...? per person??
+
+* Zählen: 
+102
 103
 115
 127
