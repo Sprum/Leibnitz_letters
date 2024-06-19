@@ -47,7 +47,7 @@ def aggregate_all(csv_paths: List[Path]):
 
 
 def aggregate_person(csv_paths: List[Path], person: str):
-    out_path = "../data/per Person/" + person
+    out_path = "../data/per Person/" + person + ".csv"
     for csv in csv_paths:
         df = read_csv(csv)
         csvs.append(df)
@@ -58,7 +58,7 @@ def aggregate_person(csv_paths: List[Path], person: str):
 
 
 def aggregate_year(csv_paths: List[Path], year: int):
-    out_path = "../data/per year/" + str(year)
+    out_path = "../data/per year/" + str(year) + ".csv"
     if len(csv_paths)>1:
         all_data = aggregate_data(csvs)
     else:
@@ -94,11 +94,11 @@ def place_is_present(df: DataFrame, place: str):
 
 
 if __name__ == "__main__":
-    # for year in year_set:
-    #     exec_aggregate_year(csv_paths, year)
+    for year in year_set:
+        exec_aggregate_year(csv_paths, year)
 
     # names = ["Leibnitz", "Sophie"]
     # for name in names:
     #     exec_aggregate_person(name)
 
-    aggregate_all(csv_paths)
+    # aggregate_all(csv_paths)
