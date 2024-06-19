@@ -51,19 +51,6 @@ def read_txts(dir):
                 lines = file.readlines()
 
 
-def replace_string_in_dataframe(df, old_string, new_string):
-    """
-    Method to replace
-    :param df:
-    :param old_string:
-    :param new_string:
-    :return:
-    """
-    # Replace occurrences of the old_string with the new_string in the 'Place' column
-    df['Place'] = df['Place'].str.replace(old_string, new_string, regex=False)
-    return df
-
-
 def check_newline_in_place(df):
     # Check for newline characters in the 'Place' column
     for index, place in df['Place'].items():
@@ -151,6 +138,7 @@ def split_into_letters(book: list):
     print(list(letters.keys()))
     return letters
 
+
 def sum_all_places():
     """
     sums up all places per csv so they are unique
@@ -182,6 +170,19 @@ def search_in_place_column(paths: List[Path], search_str: str) -> Dict[Path, pd.
     return result
 
 
+def replace_string_in_dataframe(df, old_string, new_string):
+    """
+    Method to replace
+    :param df:
+    :param old_string:
+    :param new_string:
+    :return:
+    """
+    # Replace occurrences of the old_string with the new_string in the 'Place' column
+    df['Place'] = df['Place'].str.replace(old_string, new_string, regex=False)
+    return df
+
+
 def delete_entry(paths: List[Path], search_str: str):
     for path in paths:
         df = pd.read_csv(path)
@@ -190,7 +191,11 @@ def delete_entry(paths: List[Path], search_str: str):
         # Save the filtered DataFrame back to the original CSV file
         filtered_df.to_csv(path, index=False)
 
+
 if __name__ == '__main__':
     paths = [path for path in Path("./data/per letter").iterdir()]
-    delete_entry(paths,"Tina")
-
+    # for path in paths:
+    #     df = pd.read_csv(path)
+    #     df = replace_string_in_dataframe(df, "ungarn", "Ungarn")
+    #     df.to_csv(path, index=False)
+    sum_all_places()

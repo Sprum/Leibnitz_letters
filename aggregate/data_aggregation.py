@@ -26,7 +26,7 @@ csv_paths = [path for path in Path("../data/per letter").iterdir()]
 csvs = []
 
 
-def aggregate_data(csvs: List[DataFrame]):
+def aggregate_data(csvs: List[DataFrame]) -> DataFrame:
     """Function to aggregate all the data from a given list of DataFrames to one DataFrame, summing up all Counts for
     unique places"""
     # Concatenate all DataFrames
@@ -42,7 +42,7 @@ def aggregate_all(csv_paths: List[Path]):
         csvs.append(df)
 
     all_data = aggregate_data(csvs)
-    all_data.to_csv("../data/all.csv")
+    all_data.to_csv("../data/all.csv", index=False)
     print(all_data)
 
 
@@ -53,11 +53,10 @@ def aggregate_person(csv_paths: List[Path], person: str):
         csvs.append(df)
 
     all_data = aggregate_data(csvs)
-    all_data.to_csv(out_path)
+    all_data.to_csv(out_path, index=False)
     print(all_data)
 
 
-# TODO: HIER WEITER MACHEN
 def aggregate_year(csv_paths: List[Path], year: int):
     out_path = "../data/per year/" + str(year)
     if len(csv_paths)>1:
@@ -68,7 +67,7 @@ def aggregate_year(csv_paths: List[Path], year: int):
         df = read_csv(csv)
         csvs.append(df)
     all_data = aggregate_data(csvs)
-    all_data.to_csv(out_path)
+    all_data.to_csv(out_path, index=False)
     print(year, ":\n", all_data)
 
 
@@ -95,5 +94,11 @@ def place_is_present(df: DataFrame, place: str):
 
 
 if __name__ == "__main__":
-    for year in year_set:
-        exec_aggregate_year(csv_paths, year)
+    # for year in year_set:
+    #     exec_aggregate_year(csv_paths, year)
+
+    # names = ["Leibnitz", "Sophie"]
+    # for name in names:
+    #     exec_aggregate_person(name)
+
+    aggregate_all(csv_paths)
