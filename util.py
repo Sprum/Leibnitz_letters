@@ -192,5 +192,5 @@ def delete_entry(paths: List[Path], search_str: str):
 
 if __name__ == '__main__':
     paths = [path for path in Path("./data/per letter").iterdir()]
-    delete_entry(paths,"Klencke")
+    delete_entry(paths,"Tina")
 
