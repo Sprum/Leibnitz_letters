@@ -144,12 +144,15 @@ def sum_all_places():
     sums up all places per csv so they are unique
     :return:
     """
+    print("summing up all places...")
     paths = [path for path in Path("./data/per letter").iterdir()]
 
     for path in paths:
         df = pd.read_csv(path)
         df = df.groupby('Place', as_index=False)['Count'].sum()
         df.to_csv(path, index=False)
+
+    print("done!")
 
 
 def search_in_place_column(paths: List[Path], search_str: str) -> Dict[Path, pd.DataFrame]:
@@ -184,6 +187,7 @@ def replace_string_in_dataframe(df, old_string, new_string):
 
 
 def delete_entry(paths: List[Path], search_str: str):
+    print(f"deleting '{search_str}'")
     for path in paths:
         df = pd.read_csv(path)
         # Filter out the rows where 'Place' contains the search string
@@ -192,10 +196,16 @@ def delete_entry(paths: List[Path], search_str: str):
         filtered_df.to_csv(path, index=False)
 
 
+def rename_entry(paths:  List[Path], search_string: str, new_string: str):
+    print(f"renaming {search_string} to {new_string}")
+    for path in paths:
+        df = pd.read_csv(path)
+        df = replace_string_in_dataframe(df, search_string, new_string)
+        df.to_csv(path, index=False)
+
+
 if __name__ == '__main__':
     paths = [path for path in Path("./data/per letter").iterdir()]
-    # for path in paths:
-    #     df = pd.read_csv(path)
-    #     df = replace_string_in_dataframe(df, "ungarn", "Ungarn")
-    #     df.to_csv(path, index=False)
-    sum_all_places()
+    # rename_entry(paths, "Collen", "Köln")
+    # sum_all_places()
+    delete_entry(paths,"Babylon")
