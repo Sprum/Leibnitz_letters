@@ -207,5 +207,5 @@ def rename_entry(paths:  List[Path], search_string: str, new_string: str):
 if __name__ == '__main__':
     paths = [path for path in Path("./data/per letter").iterdir()]
     # rename_entry(paths, "Collen", "Köln")
-    # sum_all_places()
-    delete_entry(paths,"Babylon")
+    sum_all_places()
+    # delete_entry(paths,"Sumer")

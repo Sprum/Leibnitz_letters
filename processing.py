@@ -1,4 +1,6 @@
 import csv
+import re
+from collections import defaultdict
 from pathlib import Path
 
 from tokenizing import read_file
@@ -66,5 +68,28 @@ def main_func_letters_to_csv():
     print(letters_data)
 
 
+def count_substring_occurrences(sub_string, search_string):
+    """
+    Searches for the given substring in the search string as a regular expression,
+    counting occurrences where the substring may have numbers appended to it.
+
+    Args:
+        sub_string (str): The substring to search for.
+        search_string (str): The string to search within.
+
+    Returns:
+        dict: A dictionary with the substring as the key and the count of occurrences as the value.
+    """
+    # Construct the regular expression pattern
+    pattern = rf"{re.escape(sub_string)}\d*"
+
+    # Find all matches in the search string
+    matches = re.findall(pattern, search_string)
+
+    # Count the total number of matches
+    total_count = len(matches)
+
+    return {sub_string: total_count}
+
 if __name__ == "__main__":
-    main_func_letters_to_csv()
+    searchstr = read_txts()
