@@ -73,8 +73,14 @@ def clean_dataframe(df):
     return df_cleaned
 
 if __name__ == '__main__':
-    paths = [path for path in Path("../data/archive/per letter").iterdir()]
-    for path in paths:
-        df = pd.read_csv(path)
-        cleaned_df = clean_dataframe(df)
-        cleaned_df.to_csv(path, index=False)
+    paths1 = [path for path in Path("../data/archive/per letter").iterdir()]
+    paths2 = [path for path in Path("../data/archive/per letter old").iterdir()]
+
+    for i in range(len(paths1)):
+        p = paths1[i]
+        print(p)
+        df1 = pd.read_csv(paths1[i])
+        df2 = pd.read_csv(paths2[i])
+        # save_path = "../data/per letter/" + paths1[i].name
+        # cleaned_df = merge_with_max_counts(df1,df2)
+        # cleaned_df.to_csv(save_path, index=False)
