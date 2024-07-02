@@ -19,9 +19,12 @@ Dinge die beim cleanen rausgefallen sind:
 * MMQGIS
 
 TODO: als nächstes
+COMPARE EACH LETTER old and NEW und dann immer das größere nehmen außerdem die komische default scheiße los werden
 1. Geocoden
-2. letztes mal cleanen?
 3. vlt auch nach Absendeort aggregieren...? per person??
+
+Differenzen:
+{'Frankfurt an der Oder', 'Kanarische Inseln', 'Schwaben', 'Wolffenbüttel', 'OberUngarn', 'Flandern', 'Rotes Meer','Ebdorff', 'Ebsdorff'}
 
 * Zählen: 
 102

@@ -22,7 +22,7 @@ def letter_num_to_key(path: Path) -> int:
 
 
 # Read in data
-csv_paths = [path for path in Path("../data/per letter").iterdir()]
+csv_paths = [path for path in Path("../data/archive/per letter old").iterdir()]
 csvs = []
 
 
@@ -94,11 +94,11 @@ def place_is_present(df: DataFrame, place: str):
 
 
 if __name__ == "__main__":
-    # for year in year_set:
-    #     exec_aggregate_year(csv_paths, year)
+    for year in year_set:
+        exec_aggregate_year(csv_paths, year)
 
-    # names = ["Leibnitz", "Sophie"]
-    # for name in names:
-    #     exec_aggregate_person(name)
+    names = ["Leibnitz", "Sophie"]
+    for name in names:
+        exec_aggregate_person(name)
 
     aggregate_all(csv_paths)

@@ -3,9 +3,12 @@ import re
 from collections import defaultdict
 from pathlib import Path
 
+from pandas import read_csv
+
+from aggregate.letter_map import places_set
 from tokenizing import read_file
 import pandas as pd
-from util import read_txts
+from util import read_txts, read_text_file, extract_letter_number
 import spacy
 
 nlp = spacy.load('de_core_news_lg')
@@ -68,6 +71,24 @@ def main_func_letters_to_csv():
     print(letters_data)
 
 
+def get_unique_entries(df, column_name):
+    """
+    Returns a set of all unique entries in the specified column of the DataFrame.
+
+    Parameters:
+    df (pandas.DataFrame): The DataFrame to process.
+    column_name (str): The column name from which to extract unique entries.
+
+    Returns:
+    set: A set of unique entries in the specified column.
+    """
+    if column_name in df.columns:
+        unique_entries = set(df[column_name].dropna().unique())
+        return unique_entries
+    else:
+        raise ValueError(f"Column '{column_name}' not found in DataFrame")
+
+
 def count_substring_occurrences(sub_string, search_string):
     """
     Searches for the given substring in the search string as a regular expression,
@@ -89,7 +110,25 @@ def count_substring_occurrences(sub_string, search_string):
     # Count the total number of matches
     total_count = len(matches)
 
-    return {sub_string: total_count}
+    return total_count
+
+
+def exec_extract_placecount_per_letter():
+    paths = [path for path in Path("./letters/cleaned").iterdir()]
+    # iter over letters
+    for path in paths:
+        print("processing:", path)
+        letter_num = extract_letter_number(path)
+        df_rows = [{"Place": None, "Count": None}]
+        searchstr = read_text_file(path)
+        # iter over places
+        for place in places_set:
+            place_count = count_substring_occurrences(place, searchstr)
+            if place_count > 0:
+                df_rows.append({"Place": place, "Count": place_count})
+        df = pd.DataFrame(df_rows)
+        df.to_csv(f"./data/per letter/{letter_num}.csv", index=False)
+
 
 if __name__ == "__main__":
-    searchstr = read_txts()
+    exec_extract_placecount_per_letter()

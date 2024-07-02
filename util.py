@@ -40,6 +40,26 @@ def write_page(txt, path):
         t_file.write(txt)
 
 
+def read_text_file(file_path):
+    """
+    Reads the text from the file at the given path and returns it as a string.
+
+    Args:
+        file_path (Path): The path to the text file.
+
+    Returns:
+        str: The content of the file as a string.
+    """
+    # Ensure the file path is a Path object
+    file_path = Path(file_path)
+
+    # Read the text from the file
+    with file_path.open('r', encoding='utf-8') as file:
+        text = file.read()
+
+    return text
+
+
 def read_txts(dir):
     for filename in os.listdir(dir):
         # Check if the file has a .txt extension
@@ -145,7 +165,7 @@ def sum_all_places():
     :return:
     """
     print("summing up all places...")
-    paths = [path for path in Path("./data/per letter").iterdir()]
+    paths = [path for path in Path("data/archive/per letter old").iterdir()]
 
     for path in paths:
         df = pd.read_csv(path)
@@ -195,8 +215,22 @@ def delete_entry(paths: List[Path], search_str: str):
         # Save the filtered DataFrame back to the original CSV file
         filtered_df.to_csv(path, index=False)
 
+def extract_letter_number(file_path: Path):
+    """
+    Extracts the numeric part (letter number) from a file name.
+    """
+    file_name = file_path.name
+    pattern = r'\d+'  # Regex pattern to match one or more digits
+    # Use re.findall to find all numeric sequences in the file name
+    numbers = re.findall(pattern, file_name)
+    # If numbers are found, return the first one as an integer
+    if numbers:
+        return int(numbers[0])
+    else:
+        return None
 
-def rename_entry(paths:  List[Path], search_string: str, new_string: str):
+
+def rename_entry(paths: List[Path], search_string: str, new_string: str):
     print(f"renaming {search_string} to {new_string}")
     for path in paths:
         df = pd.read_csv(path)
@@ -205,7 +239,7 @@ def rename_entry(paths:  List[Path], search_string: str, new_string: str):
 
 
 if __name__ == '__main__':
-    paths = [path for path in Path("./data/per letter").iterdir()]
-    # rename_entry(paths, "Collen", "Köln")
-    sum_all_places()
+    paths = [path for path in Path("data/archive/per letter old").iterdir()]
+    rename_entry(paths, "Ebstorf", "Ebstorf")
+    # sum_all_places()
     # delete_entry(paths,"Sumer")

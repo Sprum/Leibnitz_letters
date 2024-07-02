@@ -38,5 +38,5 @@ def rename_file_from_to(path: str, to: str, suffix: str):
 if __name__ == "__main__":
     # Example usage:
     input_directory = "data/archive"
-    output_directory = "data/per letter"
+    output_directory = "data/per letter old"
     rename_file_from_to(input_directory, output_directory, ".csv")
