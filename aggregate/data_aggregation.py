@@ -22,7 +22,7 @@ def letter_num_to_key(path: Path) -> int:
 
 
 # Read in data
-csv_paths = [path for path in Path("../data/archive/per letter old").iterdir()]
+csv_paths = [path for path in Path("../data/per letter").iterdir()]
 csvs = []
 
 
@@ -43,7 +43,6 @@ def aggregate_all(csv_paths: List[Path]):
 
     all_data = aggregate_data(csvs)
     all_data.to_csv("../data/all.csv", index=False)
-    print(all_data)
 
 
 def aggregate_person(csv_paths: List[Path], person: str):
@@ -54,7 +53,6 @@ def aggregate_person(csv_paths: List[Path], person: str):
 
     all_data = aggregate_data(csvs)
     all_data.to_csv(out_path, index=False)
-    print(all_data)
 
 
 def aggregate_year(csv_paths: List[Path], year: int):
@@ -68,7 +66,6 @@ def aggregate_year(csv_paths: List[Path], year: int):
         csvs.append(df)
     all_data = aggregate_data(csvs)
     all_data.to_csv(out_path, index=False)
-    print(year, ":\n", all_data)
 
 
 def exec_aggregate_year(csv_paths: List[Path], year: int):
@@ -96,9 +93,9 @@ def place_is_present(df: DataFrame, place: str):
 if __name__ == "__main__":
     for year in year_set:
         exec_aggregate_year(csv_paths, year)
+    #
+    # names = ["Leibnitz", "Sophie"]
+    # for name in names:
+    #     exec_aggregate_person(name)
 
-    names = ["Leibnitz", "Sophie"]
-    for name in names:
-        exec_aggregate_person(name)
-
-    aggregate_all(csv_paths)
+    # aggregate_all(csv_paths)

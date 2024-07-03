@@ -89,20 +89,24 @@ def get_unique_entries(df, column_name):
         raise ValueError(f"Column '{column_name}' not found in DataFrame")
 
 
+import re
+
 def count_substring_occurrences(sub_string, search_string):
     """
     Searches for the given substring in the search string as a regular expression,
-    counting occurrences where the substring may have numbers appended to it.
+    counting occurrences of the exact word match, including cases where the word
+    is followed by punctuation.
 
     Args:
         sub_string (str): The substring to search for.
         search_string (str): The string to search within.
 
     Returns:
-        dict: A dictionary with the substring as the key and the count of occurrences as the value.
+        int: The count of exact word matches of the substring in the search string.
     """
-    # Construct the regular expression pattern
-    pattern = rf"{re.escape(sub_string)}\d*"
+    # Construct the regular expression pattern for exact word match with optional trailing punctuation
+    pattern = rf"\b{re.escape(sub_string)}(?:\d+)?\b[.,!?;:]?"
+
 
     # Find all matches in the search string
     matches = re.findall(pattern, search_string)
@@ -113,22 +117,26 @@ def count_substring_occurrences(sub_string, search_string):
     return total_count
 
 
+
 def exec_extract_placecount_per_letter():
     paths = [path for path in Path("./letters/cleaned").iterdir()]
     # iter over letters
     for path in paths:
         print("processing:", path)
         letter_num = extract_letter_number(path)
-        df_rows = [{"Place": None, "Count": None}]
+        df_rows = []
         searchstr = read_text_file(path)
         # iter over places
         for place in places_set:
             place_count = count_substring_occurrences(place, searchstr)
             if place_count > 0:
                 df_rows.append({"Place": place, "Count": place_count})
-        df = pd.DataFrame(df_rows)
+        # Only create and save the DataFrame if there are valid rows
+        if df_rows:
+            df = pd.DataFrame(df_rows)
+        else:
+            df = pd.DataFrame(columns=["Place", "Count"])
         df.to_csv(f"./data/per letter/{letter_num}.csv", index=False)
-
 
 if __name__ == "__main__":
     exec_extract_placecount_per_letter()

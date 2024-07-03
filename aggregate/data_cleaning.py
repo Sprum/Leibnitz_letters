@@ -1,10 +1,11 @@
 from pathlib import Path
+from typing import List
 
 import pandas as pd
 from pandas import DataFrame
 
 
-def merge_with_max_counts(df1:DataFrame, df2:DataFrame):
+def merge_with_max_counts(df1: DataFrame, df2: DataFrame):
     """
     Merges two DataFrames on the 'Place' column and returns a new DataFrame with
     all unique places and the highest counts from either DataFrame.
@@ -72,15 +73,70 @@ def clean_dataframe(df):
 
     return df_cleaned
 
-if __name__ == '__main__':
-    paths1 = [path for path in Path("../data/archive/per letter").iterdir()]
-    paths2 = [path for path in Path("../data/archive/per letter old").iterdir()]
 
-    for i in range(len(paths1)):
-        p = paths1[i]
-        print(p)
-        df1 = pd.read_csv(paths1[i])
-        df2 = pd.read_csv(paths2[i])
-        # save_path = "../data/per letter/" + paths1[i].name
-        # cleaned_df = merge_with_max_counts(df1,df2)
-        # cleaned_df.to_csv(save_path, index=False)
+def convert_count_to_int(df):
+    """
+    Converts all values in the 'Count' column of the DataFrame to integers.
+
+    Parameters:
+    df (pd.DataFrame): The input DataFrame with a 'Count' column.
+
+    Returns:
+    pd.DataFrame: The DataFrame with 'Count' column values as integers.
+    """
+    if 'Count' in df.columns:
+        df['Count'] = df['Count'].astype(int)
+    return df
+
+
+def replace_string_in_dataframe(df, old_string, new_string):
+    """
+    Method to replace
+    :param df:
+    :param old_string:
+    :param new_string:
+    :return:
+    """
+    # Replace occurrences of the old_string with the new_string in the 'Place' column
+    df['Place'] = df['Place'].str.replace(old_string, new_string, regex=False)
+    return df
+
+
+def rename_entry(paths: List[Path], search_string: str, new_string: str):
+    print(f"renaming {search_string} to {new_string}")
+    for path in paths:
+        df = pd.read_csv(path)
+        df = replace_string_in_dataframe(df, search_string, new_string)
+        df.to_csv(path, index=False)
+
+
+def delete_entry(paths: List[Path], search_str: str):
+    print(f"deleting '{search_str}'")
+    for path in paths:
+        df = pd.read_csv(path)
+        # Filter out the rows where 'Place' contains the search string
+        filtered_df = df[~df['Place'].str.contains(search_str, case=False, na=False)]
+        # Save the filtered DataFrame back to the original CSV file
+        filtered_df.to_csv(path, index=False)
+
+
+def sum_all_places():
+    """
+    sums up all places per csv so they are unique
+    :return:
+    """
+    print("summing up all places...")
+    paths = [path for path in Path("data/archive/per letter old").iterdir()]
+
+    for path in paths:
+        df = pd.read_csv(path)
+        df = df.groupby('Place', as_index=False)['Count'].sum()
+        df.to_csv(path, index=False)
+
+    print("done!")
+
+
+if __name__ == '__main__':
+    paths = [path for path in Path("../data/per letter").iterdir()]
+    # rename_entry(paths, "Laxemburg","Laxenburg")
+    delete_entry(paths, "Spanheim")
