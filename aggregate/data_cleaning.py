@@ -138,5 +138,5 @@ def sum_all_places():
 
 if __name__ == '__main__':
     paths = [path for path in Path("../data/per letter").iterdir()]
-    # rename_entry(paths, "Laxemburg","Laxenburg")
-    delete_entry(paths, "Spanheim")
+    # rename_entry(paths, "Hanover","Hannover")
+    delete_entry(paths, "Wassenaer")

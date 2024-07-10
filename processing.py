@@ -91,6 +91,7 @@ def get_unique_entries(df, column_name):
 
 import re
 
+
 def count_substring_occurrences(sub_string, search_string):
     """
     Searches for the given substring in the search string as a regular expression,
@@ -107,7 +108,6 @@ def count_substring_occurrences(sub_string, search_string):
     # Construct the regular expression pattern for exact word match with optional trailing punctuation
     pattern = rf"\b{re.escape(sub_string)}(?:\d+)?\b[.,!?;:]?"
 
-
     # Find all matches in the search string
     matches = re.findall(pattern, search_string)
 
@@ -115,7 +115,6 @@ def count_substring_occurrences(sub_string, search_string):
     total_count = len(matches)
 
     return total_count
-
 
 
 def exec_extract_placecount_per_letter():
@@ -137,6 +136,7 @@ def exec_extract_placecount_per_letter():
         else:
             df = pd.DataFrame(columns=["Place", "Count"])
         df.to_csv(f"./data/per letter/{letter_num}.csv", index=False)
+
 
 if __name__ == "__main__":
     exec_extract_placecount_per_letter()

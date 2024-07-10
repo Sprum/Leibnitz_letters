@@ -443,3 +443,102 @@ places_set = {'Champagne', 'Utrecht', 'Lustenburg', 'Bückeburg', 'Brenta', 'Lei
               'Borgholzhausen', 'Laxemburg', 'Rotes Meer', 'Potsdam', 'Israel', 'Anjou', 'Mecklenburg', 'Dennem',
               'Tangermünde', 'Heidelberg', 'Ansbach', 'Raab', 'Ulm', 'Europäer', 'Schwede', 'Landsberg', 'Ostfriesland',
               'Brandenburger', 'York', 'Rappach', 'Königstein', 'Lüneburg', 'Ätna'}
+
+always_drop = {
+    'Gargan', 'Wassenaer', 'Arenberg', 'Bellamont', "Lissenheim", "Schmettau", "Starhemberg", "Lietzenburg",
+    'Lissenheim', "Nordburg", "Dennem", "Ormonde", "Pöllnitz", "Strahlenheim", "Wagenbourg", "Veneto", 'Ahlefeldt',
+    'Armorika',
+}
+
+always_rename = {
+    "Hanover": "Hannover", "Ebsdorff": "Ebstorf", 'Ebsdorff': "Ebstorf", 'Güstrower': 'Güstrow',
+}
+
+# zur kathegorisierung der Orte:
+nationalities_ethnicities = {
+    'Armenier', 'Amsterdamer', 'Augsburger', 'Australier', 'Europäer', 'Franzose',
+    'Holländer', 'Italiener', 'Litauer', 'Pole', 'Portugiesen', 'Schwede', 'Spanier', 'Ägypter',
+    'Brandenburger', 'Chaldäer', 'Engländer', 'Harburger', 'Hildesheimer', 'Lietzenburger', 'Osnabrücker', 'Pole',
+    'Römer', 'Schotte', 'Tiroler', 'Venezianer', 'Walachen',
+}
+
+cities = {
+    "Aachen", "Ahlden", "Altdorf", "Altona", "Antwerpen", "Astrachan",
+    "Avranches", "Barcelona", "Belgrad", "Bender", "Bonn", "Borgoforte", "Boulogne",
+    "Brandenburg", "Breda", "Breslau", "Brüssel", "Budapest", "Bückeburg",
+    "Cambridge", "Celle", "Clausthal", "Condom", "Danzig", "Den Haag", "Detmold",
+    "Dover", "Ebstorf", "Ephesus", "Florenz", "Frankfurt", "Freising", "Fuentes",
+    "Fürstenfeldbruck", "Genf", "Genua", "Gibraltar", "Glogau", "Göhrde", "Göttingen",
+    "Hackelberg", "Hamburg", "Hannover", "Hildesheim",
+    "Innsbruck", "Jena", "Karlsbad", "Kasan", "Kassel", "Kiel", "Kliszów", "Köln",
+    "Königsberg", "Krakau", "Kopenhagen", "Lamspringe", "Leipzig", "Linz",
+    "London", "Lyon", "Madrid", "Maintenon", "Malchow", "Malta", "Mantua",
+    "Maastricht", "Marienbad", "Marlborough", "Martinitz", "Maubuisson", "Meaux",
+    "Mecklenburg", "Melle", "Memel", "Merseburg", "Meseritz", "Monferrato",
+    "Monmouth", "Montepulciano", "Moskau", "München", "Namur", "Nassau", "Nauplia",
+    "Neapel", "Newcastle", "Nimwegen", "Nizza", "Nola", "Oeynhausen", "Oldenburg",
+    "Oranienburg", "Orléans", "Osnabrück", "Osterode", "Paris", "Peking", "Petersburg",
+    "Philippsburg", "Potsdam", "Prag", "Quedlinburg", "Ravenna", "Regensburg",
+    "Riga", "Rijswijk", "Rom", "Rotterdam", "Salisbury", "Salzburg", "Schwerin",
+    "Seesen", "Siena", "Smyrna", "Sorbonne", "Spandau", "Stade", "Stockholm",
+    "Tangermünde", "Teplitz", "Thorn", "Tokaj", "Tönning", "Ulm", "Utrecht", "Venlo",
+    "Venedig", "Vigo", "Warschau", "Wesel", "Wien", "Wismar",
+    "York", "Zell", "Zellerfeld", "Zweibrücken", "Schulenburg",
+    "Elbing", "Cadiz", "Essen", "Borgholzhausen", "Smyrna", "Modena", "Mailand",
+    "Innsbruck", "Madrid", "Torgau", "Wien", "Stamford", "Zerbst", "Lenzen",
+    "Güstrow", "Nienburg", "Osnabruck", "Wismar", "Nordhausen", "Mainz",
+    "Blankenburg", "Bremen", "Goslar", "Berlin", "Marienbad", "Ulm", "Ansbach",
+    "Neuburg", "Singen", "Jerusalem", "Münster", "Bristol", "Teplitz", "Mantua",
+    "Amsterdam", "Heidelberg", "Greifswald", "Charlottenburg", "Köln", "Dresden",
+    "Hannover", "Kiel", "Lübeck", "Peine", "Soest", "Brüssel", "Göteborg",
+    "Nürnberg", "Bamberg", "Augsburg", "Magdeburg", "Wittenberg", "Halle",
+    "Salzburg", "Hildesheim", "Trier", "Düsseldorf",
+    'Ferrara', 'Frankfurt an der Oder', 'Gandersheim', 'Gotha', 'Güstrower',
+    'Harburg', 'Herford', 'Helmstedt', 'Idria', 'Kehl', 'Kiew', 'Koblenz',
+    'Konstantinopel', 'Landsberg', 'Lehnin', 'Lüttich', 'Lüneburg', 'Paderborn',
+    'Pembroke', 'Peterwardein', 'Posen', 'Ratzeburg', 'Rastatt', 'Saint-Germain',
+    'Saint James', 'Stettin', 'Shrewsbury', 'Sesto', 'Temeswar', 'Wangenheim',
+    'Wesel', 'Wildeshausen', 'Wolfenbüttel', 'Bayreuth', 'Beichlingen',
+    'Bruchhausen', 'Buda', 'Burgdorf', 'Donauwörth', 'Kärnten', 'Köpenick', 'Laxenburg',
+    'Plittersdorf', 'Porto', 'Pottendorf', 'Rantzau', 'Saint Germain', 'Siebenbürgen', "Aquileja", "Bourg", "Brescello",
+    "Buckow", "Cambray", "Campen", "Chios", "Coppenbrügge", "Crossen", "Dixmuiden", "Dohna", "Fürstenberg",
+    "Großburgwedel", "Gundelsheim", "Hammerstein", "Herzberg", "Homburg", "Kairo", "Kniphausen", "Königstein",
+    "Lauenburg", "Linsburg", "Loreto", "Orange", "Pamiers", "Pinneberg", "Pyrmont", "Raab", "Salzdahlum",
+    'Bevern', 'Graupen', 'Hundisburg', "Ingenheim", "Königsmarck", "Loccum", "Schwedt", "Schönhausen", "Lüneborg",
+    'Ostrog', "Rappach", "Saint Cyr", "Sulzbach", "Tettau", "Weyhausen", "Ziesar", "Ursel", "Oranienbaum",
+    "Sternberg", "Wartenberg", "Steevenswert"
+}
+countries = {
+    "Indien", "Dänemark", "Polen", "Frankreich", "Deutschland", "Türkei",
+    "Preußen", "Russland", "Spanien", "Schweden", "Ungarn", "Norwegen",
+    "Ägypten", "Niederlande", "Italien", "England", "Irland",
+    "Grönland", "Finnland", "Äthiopien", "Portugal", "Israel", "China", "Großbritannien",
+    "Kroatien", "Litauen", "Schottland"
+}
+
+continents = {"Amerika", "Afrika", "Asien", "Europa", "Franken"}
+
+regions = {
+    "Maine", "Anhalt", "Baden", "Bayern", "Burgund", "Böhmen", "Dalmatien", "Friesland", "Holland", "Holstein",
+    "Hessen", "Hessen-Kassel", "Kurland", "Kurpfalz", "Lothringen", "Niedersachsen",
+    "Niederösterreich", "Ostfriesland", 'Persien', 'Pfalz', 'Pfalz-Neuburg', 'Pommern', 'Sachsen-Gotha', 'Sachsen',
+    'Sachsen-Lauenburg', 'Sachsen-Merseburg', 'Schlesien', 'Sizilien', 'Steiermark', 'Walachei', 'Wales', 'Württemberg',
+    'Levante', 'Anjou', 'Auvergne', 'Bretagne', 'Champagne', 'Euböa', 'Livland', 'Lombardei', "Moray", "Morea",
+    'Piemont', "Stormarn",
+    'Salm', 'Savoyen', 'Seeland', "Thüringen", "Tirol", "Toskana", "Transsilvanien", "Vaudémont", "Venetien"
+}
+
+landmarks = {"Vesuv", "Alpen", "Harz", "Kap der Guten Hoffnung", "Ätna", "Gibel"}
+
+rivers = {
+    "Rhône", "Weichsel", "Alster", "Donau", "Elbe", "Etsch", "Eider", "Inn", "Maas", "Rhein", "Oberrhein", "Po",
+    "Ruhr", "Weser", "Bille", "Brenta", "Pruth", "Stör", "Adda",
+}
+
+water_bodies = {'Mittelmeer', 'Nordmeer', 'Ostsee', 'Schwarze Meer', }
+
+misc = {
+    "Ilok", "Het Loo", "La Trappe", "Lichtenburg", "San Spirito", "Lustenburg", "Nöteburg", "Oranien", "Wardein",
+    "Salm",
+    "Styrum", 'Chaldäa', "Greiffenstein",
+}

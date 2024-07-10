@@ -18,54 +18,7 @@ Dinge die beim cleanen rausgefallen sind:
 ### Geocoding
 * MMQGIS
 
-TODO: als nächstes
-COMPARE EACH LETTER old and NEW und dann immer das größere nehmen außerdem die komische default scheiße los werden
-1. Geocoden
-3. vlt auch nach Absendeort aggregieren...? per person??
+1. Orte Kathegorisieren: Stadt, Land, Fluss 
+2. Geocoden: https://www.geoapify.com/tools/geocoding-online/
+3. Maps machen -> QGIS
 
-Differenzen:
-{'Frankfurt an der Oder', 'Kanarische Inseln', 'Schwaben', 'Wolffenbüttel', 'OberUngarn', 'Flandern', 'Rotes Meer','Ebdorff', 'Ebsdorff'}
-
-* Zählen: 
-102
-103
-115
-127
-146
-193
-194
-213
-216
-236
-237
-240
-242
-243
-249
-253
-280
-289
-303
-31
-317
-344
-35
-351
-354
-36
-360
-364
-37
-375
-41
-44
-49
-50
-52
-53
-56
-79
-87
-93
-96
-das sind alle Briefe von Sophie bei denen der absende ort nicht in der csv gefunden wurde...
