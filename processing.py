@@ -117,8 +117,8 @@ def count_substring_occurrences(sub_string, search_string):
     return total_count
 
 
-def exec_extract_placecount_per_letter():
-    paths = [path for path in Path("./letters/cleaned").iterdir()]
+def exec_extract_placecount_per_letter(letter_path: str, output_path: str):
+    paths = [path for path in Path(letter_path).iterdir()]
     # iter over letters
     for path in paths:
         print("processing:", path)
@@ -135,8 +135,8 @@ def exec_extract_placecount_per_letter():
             df = pd.DataFrame(df_rows)
         else:
             df = pd.DataFrame(columns=["Place", "Count"])
-        df.to_csv(f"./data/per letter/{letter_num}.csv", index=False)
+        df.to_csv(f"{output_path}{letter_num}.csv", index=False)
 
 
 if __name__ == "__main__":
-    exec_extract_placecount_per_letter()
+    exec_extract_placecount_per_letter("./letters/cleaned", "./data/per letter/")
