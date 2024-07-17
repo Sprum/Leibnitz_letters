@@ -27,19 +27,18 @@ def main():
     # ask openai to kindly delete the footnotes
     load_dotenv()
     api_key = os.getenv('OPENAI_KEY')
-    # client = OpenAI(api_key=api_key)
+    client = OpenAI(api_key=api_key)
     message_content = letters[1]
     print(message_content)
-    # TODO: set up the api call properly to mittigate ratelimit exceedings
-    # completion = client.chat.completions.create(
-    #     model="gpt-3.5-turbo",
-    #     messages=[
-    #         {"role": "system",
-    #          "content": "you are my assistant. I give you a page of a book containing letters between leibnitz and sophie von Hannover. you will respond with the page i posted to you but you will delete the footnotes."},
-    #         {"role": "user", "content": message_content}
-    #     ]
-    # )
-    # print(completion.choices[0].message)
+    completion = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system",
+             "content": "you are my assistant. I give you a page of a book containing letters between leibnitz and sophie von Hannover. you will respond with the page i posted to you but you will delete the footnotes."},
+            {"role": "user", "content": message_content}
+        ]
+    )
+    print(completion.choices[0].message)
 
 
 if __name__ == "__main__":

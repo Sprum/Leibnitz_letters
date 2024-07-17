@@ -52,8 +52,8 @@ def data_dict_to_csv(write_path: str, data_dict: dict) -> None:
     df.to_csv(file_path, index=False)
 
 
-def main_func_letters_to_csv():
-    path = Path("letters/cleaned")
+def main_func_letters_to_csv(working_dir: str):
+    path = Path(r"C:\Eigene Dateien\Coding\eigenes\pypdf_test\letters\cleaned")
     # read_txts
     letter_paths = [i for i in path.iterdir() if i.is_file()]
 
@@ -64,7 +64,7 @@ def main_func_letters_to_csv():
         places_dict = letter_to_places_dict(letter_path)
         data_dict["data"] = places_dict
 
-        data_dict_to_csv("./data/", data_dict)
+        data_dict_to_csv(working_dir, data_dict)
 
         letters_data.append(data_dict)
 

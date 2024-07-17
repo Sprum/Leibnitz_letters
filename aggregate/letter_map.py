@@ -442,7 +442,8 @@ places_set = {'Champagne', 'Utrecht', 'Lustenburg', 'Bückeburg', 'Brenta', 'Lei
               'Maubuisson', 'Wolffenbüttel', 'Newcastle', 'Osterode', 'Namur', 'Schmettau', 'Piemont', 'Sternberg',
               'Borgholzhausen', 'Laxemburg', 'Rotes Meer', 'Potsdam', 'Israel', 'Anjou', 'Mecklenburg', 'Dennem',
               'Tangermünde', 'Heidelberg', 'Ansbach', 'Raab', 'Ulm', 'Europäer', 'Schwede', 'Landsberg', 'Ostfriesland',
-              'Brandenburger', 'York', 'Rappach', 'Königstein', 'Lüneburg', 'Ätna', 'Herrenhausen'}
+              'Brandenburger', 'York', 'Rappach', 'Königstein', 'Lüneburg', 'Ätna', 'Herrenhausen', 'Åbo', 'Turku',
+              'Hollandt', 'Cöllen'}
 
 always_drop = {
     'Gargan', 'Wassenaer', 'Arenberg', 'Bellamont', "Lissenheim", "Schmettau", "Starhemberg", "Lietzenburg",
@@ -451,7 +452,8 @@ always_drop = {
 }
 
 always_rename = {
-    "Hanover": "Hannover", "Ebsdorff": "Ebstorf", 'Ebsdorff': "Ebstorf", 'Güstrower': 'Güstrow',
+    "Hanover": "Hannover", "Ebsdorff": "Ebstorf", 'Ebsdorff': "Ebstorf", 'Güstrower': 'Güstrow', 'Åbo': 'Turku',
+    'Hollandt': 'Holland', "Cöllen": "Köln"
 }
 
 # zur kathegorisierung der Orte:
@@ -469,8 +471,9 @@ cities = {
     "Cambridge", "Celle", "Clausthal", "Condom", "Danzig", "Den Haag", "Detmold",
     "Dover", "Ebstorf", "Ephesus", "Florenz", "Frankfurt", "Freising", "Fuentes",
     "Fürstenfeldbruck", "Genf", "Genua", "Gibraltar", "Glogau", "Göhrde", "Göttingen",
-    "Hackelberg", "Hamburg", "Hannover", "Hildesheim", "Herrenhausen",
-    "Innsbruck", "Jena", "Karlsbad", "Kasan", "Kassel", "Kiel", "Kliszów", "Köln",
+    "Hackelberg", "Hamburg", "Hannover", "Hildesheim", "Herrenhausen", 'Turku'
+    "Innsbruck", "Jena", "Karlsbad", "Kasan", "Cöllen"
+    "Kassel", "Kiel", "Kliszów", "Köln",
     "Königsberg", "Krakau", "Kopenhagen", "Lamspringe", "Leipzig", "Linz",
     "London", "Lyon", "Madrid", "Maintenon", "Malchow", "Malta", "Mantua",
     "Maastricht", "Marienbad", "Marlborough", "Martinitz", "Maubuisson", "Meaux",

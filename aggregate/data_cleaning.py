@@ -120,13 +120,12 @@ def delete_entry(paths: List[Path], search_str: str):
         filtered_df.to_csv(path, index=False)
 
 
-def sum_all_places():
+def sum_all_places(paths: List[Path]):
     """
     sums up all places per csv so they are unique
     :return:
     """
     print("summing up all places...")
-    paths = [path for path in Path("data/archive/per letter old").iterdir()]
 
     for path in paths:
         df = pd.read_csv(path)

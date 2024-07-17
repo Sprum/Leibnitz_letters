@@ -1,7 +1,7 @@
 """Module for aggregating the extracted data"""
 from pathlib import Path
 from typing import List
-from letter_map import letter_map, year_set
+from aggregate.letter_map import letter_map, year_set
 from pandas import DataFrame
 
 import pandas as pd
@@ -36,13 +36,13 @@ def aggregate_data(csvs: List[DataFrame]) -> DataFrame:
     return all_data
 
 
-def aggregate_all(csv_paths: List[Path]):
+def aggregate_all(csv_paths: List[Path], out_path: str):
     for csv in csv_paths:
         df = read_csv(csv)
         csvs.append(df)
 
     all_data = aggregate_data(csvs)
-    all_data.to_csv("../data/all.csv", index=False)
+    all_data.to_csv(out_path, index=False)
 
 
 def aggregate_person(csv_paths: List[Path], person: str):
@@ -98,4 +98,4 @@ if __name__ == "__main__":
     # for name in names:
     #     exec_aggregate_person(name)
 
-    aggregate_all(csv_paths)
+    aggregate_all(csv_paths, "../data/all.csv")
