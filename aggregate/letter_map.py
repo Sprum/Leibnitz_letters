@@ -447,7 +447,7 @@ places_set = {'Champagne', 'Utrecht', 'Lustenburg', 'Bückeburg', 'Brenta', 'Lei
 always_drop = {
     'Gargan', 'Wassenaer', 'Arenberg', 'Bellamont', "Lissenheim", "Schmettau", "Starhemberg", "Lietzenburg",
     'Lissenheim', "Nordburg", "Dennem", "Ormonde", "Pöllnitz", "Strahlenheim", "Wagenbourg", "Veneto", 'Ahlefeldt',
-    'Armorika',
+    'Armorika', "San Spirito", "Styrum"
 }
 
 always_rename = {
@@ -538,7 +538,6 @@ rivers = {
 water_bodies = {'Mittelmeer', 'Nordmeer', 'Ostsee', 'Schwarze Meer', }
 
 misc = {
-    "Ilok", "Het Loo", "La Trappe", "Lichtenburg", "San Spirito", "Lustenburg", "Nöteburg", "Oranien", "Wardein",
-    "Salm",
+    "Ilok", "Het Loo", "La Trappe", "Lichtenburg", "Lustenburg", "Nöteburg", "Oranien", "Wardein",
     "Styrum", 'Chaldäa', "Greiffenstein",
 }

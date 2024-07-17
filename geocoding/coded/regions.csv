@@ -1,0 +1,54 @@
+﻿original_Place,original_Count,lat,lon,formatted,county,county_code,name,state,state_code,country,country_code,confidence,attribution,attribution_license,attribution_url
+Anhalt,9,51.81717865,11.814186642054064,"Anhalt, ST, Deutschland",,,Anhalt,Sachsen-Anhalt,ST,Deutschland,de,0.9,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Anjou,4,47.473275,-0.594874,,,,,,,,,,,,
+Auvergne,2,45.699945,3.299964,"Auvergne No. 76, SK, Kanada",Auvergne No. 76,,,Saskatchewan,SK,Kanada,ca,0.81,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Baden,7,48.551801,8.423231,"Baden, Österreich",Baden,,Baden,Niederösterreich,,Österreich,at,1,Who's On First,CC0,https://www.whosonfirst.org/docs/licenses/
+Bayern,34,48.9467562,11.4038717,"Bayern, Deutschland",,,,Bayern,BY,Deutschland,de,1,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Bretagne,1,48.2640845,-2.9202408,"Bretagne, Frankreich",,,,Bretagne,BRE,Frankreich,fr,1,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Burgund,10,47.052609,4.383719,,,,,,,,,,,,
+Böhmen,2,50.077653,14.432080,,,,,,,,,,,,
+Champagne,1,48.965329,4.366658,"Châlons-en-Champagne Canton, Département Marne, Frankreich",Département Marne,,Châlons-en-Champagne Canton,Grand Est,GES,Frankreich,fr,0.3125,Who's On First,CC0,https://www.whosonfirst.org/docs/licenses/
+Dalmatien,1,43.564955,16.494169,,,,,,,,,,,,
+Euböa,1,38.519828,23.852789,,,,,,,,,,,,
+Friesland,2,53.015074,5.684645,"Friesland, NI, Deutschland",Landkreis Friesland,,,Niedersachsen,NI,Deutschland,de,0.9,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Hessen,6,50.6080651,9.0284647,"Hessen, Deutschland",,,,Hessen,HE,Deutschland,de,1,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Hessen-Kassel,1,51.2934378,9.506804977727738,"Kassel, HE, Deutschland",Landkreis Kassel,,Kassel,Hessen,HE,Deutschland,de,0.5,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Holland,48,52.367472,4.782052,"Nord-Holland, Niederlande",,,Nord-Holland,Nord-Holland,,Niederlande,nl,0.9,Who's On First,CC0,https://www.whosonfirst.org/docs/licenses/
+Holstein,21,54.081695,9.794596,"Schleswig-Holstein, Deutschland",,,Schleswig-Holstein,Schleswig-Holstein,SH,Deutschland,de,0.9,Who's On First,CC0,https://www.whosonfirst.org/docs/licenses/
+Kurland,8,56.879897,22.908946,,,,,,,,,,,,
+Kurpfalz,1,49.445913,8.539779,,,,,,,,,,,,
+Levante,2,33.920650,35.971788,,,,,,,,,,,,
+Livland,3,57.126467,25.031320,,,,,,,,,,,,
+Lombardei,2,45.5703694,9.7732524,"Lombardei, Italien",,,,Lombardei,,Italien,it,1,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Lothringen,14,48.528061,6.513075,,,,,,,,,,,,
+Maine,2,48.016481,-0.007138,"Maine, Vereinigte Staaten von Amerika",,,,Maine,ME,Vereinigte Staaten von Amerika,us,1,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Moray,1,57.416667,-3.25,"Moray, Schottland, Vereinigtes Königreich",Moray,MRY,,Schottland,,Vereinigtes Königreich,gb,1,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Morea,1,37.357286,22.353978,"Peloponnes, Griechenland",,,Peloponnes,Peloponnes,,Griechenland,gr,0,Who's On First,CC0,https://www.whosonfirst.org/docs/licenses/
+Niedersachsen,1,52.8398531,9.075962,"Niedersachsen, Deutschland",,,,Niedersachsen,NI,Deutschland,de,1,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Niederösterreich,1,48.2817813,15.7632457,"Niederösterreich, Österreich",,,,Niederösterreich,,Österreich,at,1,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Ostfriesland,9,53.426203,7.641571,,,,,,,,,,,,
+Persien,2,31.896770,53.204575,,,,,,,,,,,,
+Pfalz,20,50.099567,7.268906,"Rheinland-Pfalz, Deutschland",,,Rheinland-Pfalz,Rheinland-Pfalz,RP,Deutschland,de,0.9,Who's On First,CC0,https://www.whosonfirst.org/docs/licenses/
+Pfalz-Neuburg,1,48.666349,11.235705,"Landkreis Neuburg-Schrobenhausen, Neuburg-Schrobenhausen, BY, Deutschland",Landkreis Neuburg-Schrobenhausen,,Landkreis Neuburg-Schrobenhausen,Bayern,BY,Deutschland,de,0.25,Who's On First,CC0,https://www.whosonfirst.org/docs/licenses/
+Piemont,1,45.060735,7.923549,"Piemont, Italien",,,,Piemont,,Italien,it,1,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Pommern,6,53.811632,15.519930,"Woiwodschaft Pommern, Polen",,,,Woiwodschaft Pommern,,Polen,pl,0.9,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Sachsen,53,50.9295798,13.4585052,"Sachsen, Deutschland",,,,Sachsen,SN,Deutschland,de,1,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Sachsen-Gotha,1,50.943449,10.700826,"Sachsen, Deutschland",,,Sachsen,Sachsen,SN,Deutschland,de,0.5,Who's On First,CC0,https://www.whosonfirst.org/docs/licenses/
+Sachsen-Lauenburg,1,51.042135,13.372536,"Sachsen, Deutschland",,,Sachsen,Sachsen,SN,Deutschland,de,0.5,Who's On First,CC0,https://www.whosonfirst.org/docs/licenses/
+Sachsen-Merseburg,2,51.351206,11.985029,"Sachsen, Deutschland",,,Sachsen,Sachsen,SN,Deutschland,de,0.5,Who's On First,CC0,https://www.whosonfirst.org/docs/licenses/
+Salm,13,51.850660,6.819067,,,,,,,,,,,,
+Savoyen,9,45.674003,6.318783,,,,,,,,,,,,
+Schlesien,2,51.100086,17.018497,"Woiwodschaft Schlesien, Polen",,,,Woiwodschaft Schlesien,,Polen,pl,0.9,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Seeland,1,51.4162975,3.7028061,"Seeland, Niederlande",,,,Seeland,,Niederlande,nl,1,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Sizilien,2,37.587794,14.155048,"Sizilien, Italien",,,,Sizilien,,Italien,it,1,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Steiermark,1,47.2500001,15.1666665,"Steiermark, Österreich",,,,Steiermark,,Österreich,at,1,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Stormarn,1,53.7215127,10.3586145,"Stormarn, SH, Deutschland",Stormarn,,,Schleswig-Holstein,SH,Deutschland,de,1,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Thüringen,1,50.9014721,11.0377839,"Thüringen, Deutschland",,,,Thüringen,TH,Deutschland,de,1,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Tirol,3,47.223193,11.5261028,"Tirol, Österreich",,,,Tirol,,Österreich,at,1,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Toskana,4,43.4586541,11.1389204,"Toskana, Italien",,,,Toskana,,Italien,it,1,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Transsilvanien,2,46.222256,25.208633,,,,,,,,,,,,
+Vaudémont,2,48.421555,6.057865,,,,,,,,,,,,
+Venetien,1,45.6476663,11.8665254,"Venetien, Italien",,,,Venetien,,Italien,it,1,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Walachei,1,44.576358,25.070282,,,,,,,,,,,,
+Wales,16,52.2928116,-3.73893,"Wales, Vereinigtes Königreich",,,,Wales,WLS,Vereinigtes Königreich,gb,1,© OpenStreetMap contributors,Open Database License,https://www.openstreetmap.org/copyright
+Württemberg,6,48.605915,9.147881,"Baden-Württemberg, Deutschland",,,Baden-Württemberg,Baden-Württemberg,BW,Deutschland,de,0.9,Who's On First,CC0,https://www.whosonfirst.org/docs/licenses/
