@@ -396,7 +396,7 @@ places_set = {'Champagne', 'Utrecht', 'Lustenburg', 'Bückeburg', 'Brenta', 'Lei
               'Het Loo', 'Orange', 'Jena', 'Siena', 'Ruhr', 'Schwarze Meer', 'Salm', 'Köln', 'Spanien', 'Peterwardein',
               'Osnabruck', 'Riga', 'Stamford', 'Gibraltar', 'Warschau', 'Amsterdamer', 'Niederösterreich', 'Afrika',
               'Koblenz', 'Kassel', 'Etsch', 'Krakau', 'Großburgwedel', 'Kniphausen', 'Grieche', 'Friesland', 'Walachei',
-              'Buckow', 'Königreich', 'Kairo', 'Armenier', 'Pfalz-Neuburg', 'Temeswar', 'Stettin', 'Eider',
+              'Buckow', 'Kairo', 'Armenier', 'Pfalz-Neuburg', 'Temeswar', 'Stettin', 'Eider',
               'Maastricht', 'Pamiers', 'Russland', 'Preußen', 'Donauwörth', 'San Spirito', 'Adda', 'Teplitz', 'Böhmen',
               'Kurland', 'Königsmarck', 'Lietzenburg', 'Gotha', 'Nassau', 'Armorika', 'Thorn', 'Mainz', 'Pinneberg',
               'Wangenheim', 'Oranien', 'Gibel', 'Portugal', 'Harburger', 'Veneto', 'Augsburger', 'Schottland',
@@ -443,19 +443,20 @@ places_set = {'Champagne', 'Utrecht', 'Lustenburg', 'Bückeburg', 'Brenta', 'Lei
               'Borgholzhausen', 'Laxemburg', 'Rotes Meer', 'Potsdam', 'Israel', 'Anjou', 'Mecklenburg', 'Dennem',
               'Tangermünde', 'Heidelberg', 'Ansbach', 'Raab', 'Ulm', 'Europäer', 'Schwede', 'Landsberg', 'Ostfriesland',
               'Brandenburger', 'York', 'Rappach', 'Königstein', 'Lüneburg', 'Ätna', 'Herrenhausen', 'Åbo', 'Turku',
-              'Hollandt', 'Cöllen'}
+              'Hollandt', 'Cöllen', 'Budapest'}
 
 always_drop = {
     'Gargan', 'Wassenaer', 'Arenberg', 'Bellamont', "Lissenheim", "Schmettau", "Starhemberg", "Lietzenburg",
     'Lissenheim', "Nordburg", "Dennem", "Ormonde", "Pöllnitz", "Strahlenheim", "Wagenbourg", "Veneto", 'Ahlefeldt',
-    'Armorika', "San Spirito", "Styrum", 'Harburger'
+    'Armorika', "San Spirito", "Styrum", 'Harburger', 'Spanheim', 'Scarlati'
 }
 
 always_rename = {
     "Hanover": "Hannover", "Ebsdorff": "Ebstorf", 'Ebdorff': "Ebstorf", 'Güstrower': 'Güstrow', 'Åbo': 'Turku',
     'Hollandt': 'Holland', "Cöllen": "Köln", 'Lietzenburger': 'Lietzenburg', 'Osnabrücker': 'Osnabrück',
-    'Augsburger': 'Augsburg', 'Hildesheimer': 'Hildesheim', 'Amsterdamer': 'Amsterdamer', 'Tiroler': 'Tirol',
-    'Osnabrücker': 'Osnabrück', 'Augsburger': 'Augsburg', "Brandenburger": 'Brandenburg'
+    'Augsburger': 'Augsburg', 'Hildesheimer': 'Hildesheim', 'Amsterdamer': 'Amsterdam', 'Tiroler': 'Tirol',
+    'Osnabrücker': 'Osnabrück', 'Augsburger': 'Augsburg', "Brandenburger": 'Brandenburg', 'Laxemburg': 'Laxenburg',
+    'Pest': 'Budapest', 'Buda': 'Budapest',
 }
 
 # zur kathegorisierung der Orte:
@@ -474,7 +475,7 @@ cities = {
     "Dover", "Ebstorf", "Ephesus", "Florenz", "Frankfurt", "Freising", "Fuentes",
     "Fürstenfeldbruck", "Genf", "Genua", "Gibraltar", "Glogau", "Göhrde", "Göttingen",
     "Hackelberg", "Hamburg", "Hannover", "Hildesheim", "Herrenhausen", 'Turku'
-    "Innsbruck", "Jena", "Karlsbad", "Kasan",
+    "Innsbruck", "Jena", "Karlsbad", "Kasan", 'Straßburg',
     "Cöllen", "Kassel", "Kiel", "Kliszów", "Köln",
     "Königsberg", "Krakau", "Kopenhagen", "Lamspringe", "Leipzig", "Linz",
     "London", "Lyon", "Madrid", "Maintenon", "Malchow", "Malta", "Mantua",
