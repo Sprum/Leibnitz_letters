@@ -8,8 +8,7 @@ Alster,3
 Altdorf,9
 Altona,5
 Amerika,9
-Amsterdam,27
-Amsterdamer,6
+Amsterdam,33
 Anhalt,27
 Anjou,11
 Ansbach,18
@@ -51,7 +50,8 @@ Bristol,2
 Bruchhausen,6
 Brüssel,7
 Buckow,6
-Buda,9
+Budapest,9
+Budapestpest,6
 Burgdorf,9
 Burgund,29
 Böhmen,9
@@ -178,7 +178,6 @@ Kurland,24
 Kurpfalz,3
 Kärnten,3
 Köln,39
-Königreich,59
 Königsberg,3
 Königsmarck,24
 Königstein,9
@@ -187,8 +186,7 @@ La Trappe,9
 Lamspringe,9
 Landsberg,3
 Lauenburg,6
-Laxemburg,3
-Laxenburg,2
+Laxenburg,5
 Lehnin,9
 Leipzig,24
 Lenzen,9
@@ -280,7 +278,6 @@ Peine,3
 Peking,3
 Pembroke,6
 Persien,6
-Pest,6
 Petersburg,8
 Peterwardein,6
 Pfalz,58
@@ -333,7 +330,6 @@ Salm,26
 Salzburg,3
 Salzdahlum,19
 Savoyen,25
-Scarlati,3
 Schlesien,9
 Schotte,11
 Schottland,36
@@ -355,7 +351,6 @@ Smyrna,3
 Soest,3
 Sorbonne,12
 Spandau,12
-Spanheim,21
 Spanien,104
 Spanier,32
 Stade,6
