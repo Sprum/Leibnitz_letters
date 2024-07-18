@@ -105,8 +105,8 @@ def count_substring_occurrences(sub_string, search_string):
     Returns:
         int: The count of exact word matches of the substring in the search string.
     """
-    # Construct the regular expression pattern for exact word match with optional trailing punctuation
-    pattern = rf"\b{re.escape(sub_string)}(?:\d+)?\b[.,!?;:]?"
+    # Construct the regular expression pattern for exact word match with optional trailing punctuation/digits/plural "s"
+    pattern = rf"\b{re.escape(sub_string)}(?:s)?(?:\d+)?\b[.,!?;:]?"
 
     # Find all matches in the search string
     matches = re.findall(pattern, search_string)
