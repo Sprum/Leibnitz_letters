@@ -7,3 +7,4 @@
 /process_data.ipynb
 /.ipynb_checkpoints/process_data-checkpoint.ipynb
 /.ipynb_checkpoints/util-checkpoint.py
+/integrity/*.csv

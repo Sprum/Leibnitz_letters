@@ -77,11 +77,11 @@ if __name__ == "__main__":
     # Read in data
     csv_paths = [path for path in Path("../data/per letter").iterdir()]
 
-    # for year in year_set:
-    #     exec_aggregate_year(csv_paths, year)
+    for year in year_set:
+        exec_aggregate_year(csv_paths, year)
 
     names = ["Leibnitz", "Sophie"]
     for name in names:
         exec_aggregate_person(name)
 
-    # aggregate_all(csv_paths, "../data/all.csv")
+    aggregate_all(csv_paths, "../data/all.csv")
