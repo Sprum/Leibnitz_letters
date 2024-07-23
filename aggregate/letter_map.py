@@ -448,7 +448,7 @@ places_set = {'Champagne', 'Utrecht', 'Lustenburg', 'Bückeburg', 'Brenta', 'Lei
 always_drop = {
     'Gargan', 'Wassenaer', 'Arenberg', 'Bellamont', "Lissenheim", "Schmettau", "Starhemberg", "Lietzenburg",
     'Lissenheim', "Nordburg", "Dennem", "Ormonde", "Pöllnitz", "Strahlenheim", "Wagenbourg", "Veneto", 'Ahlefeldt',
-    'Armorika', "San Spirito", "Styrum", 'Harburger', 'Spanheim', 'Scarlati'
+    'Armorika', "San Spirito", "Styrum", 'Harburger', 'Spanheim', 'Scarlati', 'Greiffenstein'
 }
 
 always_rename = {
@@ -456,14 +456,15 @@ always_rename = {
     'Hollandt': 'Holland', "Cöllen": "Köln", 'Lietzenburger': 'Lietzenburg', 'Osnabrücker': 'Osnabrück',
     'Augsburger': 'Augsburg', 'Hildesheimer': 'Hildesheim', 'Amsterdamer': 'Amsterdam', 'Tiroler': 'Tirol',
     'Osnabrücker': 'Osnabrück', 'Augsburger': 'Augsburg', "Brandenburger": 'Brandenburg', 'Laxemburg': 'Laxenburg',
-    'Pest': 'Budapest', 'Buda': 'Budapest', 'Budapestpest': 'Budapest', 'Saint Germain':'Saint-Germain',
+    'Pest': 'Budapest', 'Buda': 'Budapest', 'Budapestpest': 'Budapest', 'Saint Germain': 'Saint-Germain',
+    'Chaldäer': 'Chaldäa', 'Lüneborg': 'Lüneburg', 'Osnabruck': 'Osnabrück',
 }
 
 # zur kathegorisierung der Orte:
 nationalities_ethnicities = {
     'Armenier', 'Australier', 'Europäer', 'Franzose', 'Türke',
     'Holländer', 'Italiener', 'Litauer', 'Pole', 'Portugiesen', 'Schwede', 'Spanier', 'Ägypter',
-    'Chaldäer', 'Engländer','Römer', 'Schotte', 'Venezianer', 'Walachen',
+    'Chaldäer', 'Engländer', 'Römer', 'Schotte', 'Venezianer', 'Walachen',
 }
 
 cities = {
@@ -474,7 +475,8 @@ cities = {
     "Dover", "Ebstorf", "Ephesus", "Florenz", "Frankfurt", "Freising", "Fuentes",
     "Fürstenfeldbruck", "Genf", "Genua", "Gibraltar", "Glogau", "Göhrde", "Göttingen",
     "Hackelberg", "Hamburg", "Hannover", "Hildesheim", "Herrenhausen", 'Turku'
-    "Innsbruck", "Jena", "Karlsbad", "Kasan", 'Straßburg',
+                                                                       "Innsbruck", "Jena", "Karlsbad", "Kasan",
+    'Straßburg',
     "Cöllen", "Kassel", "Kiel", "Kliszów", "Köln",
     "Königsberg", "Krakau", "Kopenhagen", "Lamspringe", "Leipzig", "Linz",
     "London", "Lyon", "Madrid", "Maintenon", "Malchow", "Malta", "Mantua",
