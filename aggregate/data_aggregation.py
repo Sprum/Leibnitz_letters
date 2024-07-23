@@ -21,11 +21,6 @@ def letter_num_to_key(path: Path) -> int:
         return
 
 
-# Read in data
-csv_paths = [path for path in Path("../data/per letter").iterdir()]
-csvs = []
-
-
 def aggregate_data(csvs: List[DataFrame]) -> DataFrame:
     """Function to aggregate all the data from a given list of DataFrames to one DataFrame, summing up all Counts for
     unique places"""
@@ -37,6 +32,7 @@ def aggregate_data(csvs: List[DataFrame]) -> DataFrame:
 
 
 def aggregate_all(csv_paths: List[Path], out_path: str):
+    csvs = []
     for csv in csv_paths:
         df = read_csv(csv)
         csvs.append(df)
@@ -46,44 +42,31 @@ def aggregate_all(csv_paths: List[Path], out_path: str):
 
 
 def aggregate_person(csv_paths: List[Path], person: str):
-    out_path = "../data/per Person/" + person + ".csv"
-    for csv in csv_paths:
-        df = read_csv(csv)
-        csvs.append(df)
-
+    csvs = [read_csv(csv) for csv in csv_paths]
     all_data = aggregate_data(csvs)
+    out_path = f"../data/per Person/{person}.csv"
     all_data.to_csv(out_path, index=False)
 
 
+def exec_aggregate_person(person: str):
+    person_letters = [csv for csv in csv_paths if
+                      letter_num_to_key(csv) is not None and letter_map[letter_num_to_key(csv)][0] == person]
+    if person_letters:
+        aggregate_person(person_letters, person)
+
+
 def aggregate_year(csv_paths: List[Path], year: int):
-    out_path = "../data/per year/" + str(year) + ".csv"
-    if len(csv_paths)>1:
-        all_data = aggregate_data(csvs)
-    else:
-        all_data = read_csv(csv_paths[0])
-    for csv in csv_paths:
-        df = read_csv(csv)
-        csvs.append(df)
+    csvs = [read_csv(csv) for csv in csv_paths]
     all_data = aggregate_data(csvs)
+    out_path = f"../data/per year/{year}.csv"
     all_data.to_csv(out_path, index=False)
 
 
 def exec_aggregate_year(csv_paths: List[Path], year: int):
-    year_letters = []
-    for csv in csv_paths:
-        key = letter_num_to_key(csv)
-        if letter_map[key][2] == year:
-            year_letters.append(csv)
-    aggregate_year(year_letters, year)
-
-
-def exec_aggregate_person(person: str):
-    person_letters = []
-    for csv in csv_paths:
-        key = letter_num_to_key(csv)
-        if letter_map[key][0] == person:
-            person_letters.append(csv)
-    aggregate_person(person_letters, person)
+    year_letters = [csv for csv in csv_paths if
+                    letter_num_to_key(csv) is not None and letter_map[letter_num_to_key(csv)][2] == year]
+    if year_letters:
+        aggregate_year(year_letters, year)
 
 
 def place_is_present(df: DataFrame, place: str):
@@ -91,11 +74,14 @@ def place_is_present(df: DataFrame, place: str):
 
 
 if __name__ == "__main__":
+    # Read in data
+    csv_paths = [path for path in Path("../data/per letter").iterdir()]
+
     # for year in year_set:
     #     exec_aggregate_year(csv_paths, year)
 
-    # names = ["Leibnitz", "Sophie"]
-    # for name in names:
-    #     exec_aggregate_person(name)
+    names = ["Leibnitz", "Sophie"]
+    for name in names:
+        exec_aggregate_person(name)
 
-    aggregate_all(csv_paths, "../data/all.csv")
+    # aggregate_all(csv_paths, "../data/all.csv")

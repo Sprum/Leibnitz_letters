@@ -456,7 +456,7 @@ always_rename = {
     'Hollandt': 'Holland', "Cöllen": "Köln", 'Lietzenburger': 'Lietzenburg', 'Osnabrücker': 'Osnabrück',
     'Augsburger': 'Augsburg', 'Hildesheimer': 'Hildesheim', 'Amsterdamer': 'Amsterdam', 'Tiroler': 'Tirol',
     'Osnabrücker': 'Osnabrück', 'Augsburger': 'Augsburg', "Brandenburger": 'Brandenburg', 'Laxemburg': 'Laxenburg',
-    'Pest': 'Budapest', 'Buda': 'Budapest',
+    'Pest': 'Budapest', 'Buda': 'Budapest', 'Budapestpest': 'Budapest'
 }
 
 # zur kathegorisierung der Orte:
