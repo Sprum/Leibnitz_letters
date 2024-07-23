@@ -461,10 +461,9 @@ always_rename = {
 
 # zur kathegorisierung der Orte:
 nationalities_ethnicities = {
-    'Armenier', 'Australier', 'Europäer', 'Franzose', 'Türke'
+    'Armenier', 'Australier', 'Europäer', 'Franzose', 'Türke',
     'Holländer', 'Italiener', 'Litauer', 'Pole', 'Portugiesen', 'Schwede', 'Spanier', 'Ägypter',
-    'Chaldäer', 'Engländer', 'Pole',
-    'Römer', 'Schotte', 'Venezianer', 'Walachen',
+    'Chaldäer', 'Engländer','Römer', 'Schotte', 'Venezianer', 'Walachen',
 }
 
 cities = {
