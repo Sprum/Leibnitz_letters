@@ -474,10 +474,8 @@ cities = {
     "Cambridge", "Celle", "Clausthal", "Condom", "Danzig", "Den Haag", "Detmold",
     "Dover", "Ebstorf", "Ephesus", "Florenz", "Frankfurt", "Freising", "Fuentes",
     "Fürstenfeldbruck", "Genf", "Genua", "Gibraltar", "Glogau", "Göhrde", "Göttingen",
-    "Hackelberg", "Hamburg", "Hannover", "Hildesheim", "Herrenhausen", 'Turku'
-                                                                       "Innsbruck", "Jena", "Karlsbad", "Kasan",
-    'Straßburg',
-    "Cöllen", "Kassel", "Kiel", "Kliszów", "Köln",
+    "Hackelberg", "Hamburg", "Hannover", "Hildesheim", "Herrenhausen", 'Turku', "Innsbruck", "Jena", "Karlsbad",
+    "Kasan",'Straßburg', "Cöllen", "Kassel", "Kiel", "Kliszów", "Köln",
     "Königsberg", "Krakau", "Kopenhagen", "Lamspringe", "Leipzig", "Linz",
     "London", "Lyon", "Madrid", "Maintenon", "Malchow", "Malta", "Mantua",
     "Maastricht", "Marienbad", "Marlborough", "Martinitz", "Maubuisson", "Meaux",
