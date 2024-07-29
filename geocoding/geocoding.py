@@ -3,7 +3,8 @@ from typing import List, Set
 import pandas as pd
 from pandas import DataFrame
 
-from aggregate.letter_map import water_bodies, rivers, continents, nationalities_ethnicities
+from aggregate.letter_map import water_bodies, rivers, continents, nationalities_ethnicities, always_drop, always_rename
+
 
 # TODO: hier noch mal nachsehen: 1. filter fixen, außerdem vermutlich Greiffenstein nochmal droppen -> always drop in die Filter
 def give_coordinates(df: DataFrame, coordinates_data: DataFrame, filters: List[Set]) -> DataFrame:
@@ -32,10 +33,15 @@ def filter_out_by_set(df: DataFrame, filters: List[set]) -> DataFrame:
     return filtered_df
 
 
-if __name__ == '__main__':
+def geocode_dataframe(csv_path: str) -> DataFrame:
     filters = [water_bodies, rivers, continents, nationalities_ethnicities]
-    df = pd.read_csv("../data/all.csv")
+    df = pd.read_csv(csv_path)
     coordinates = pd.read_csv("./coordinates.csv")
-    print(len(coordinates))
     merged_coordinates = give_coordinates(df, coordinates, filters)
-    print(merged_coordinates[merged_coordinates['lat'].isna()])
+    return merged_coordinates
+
+if __name__ == '__main__':
+    # paths = ["../data/all.csv", "../data/per person/Leibnitz.csv","../data/per person/Sophie.csv"]
+    coded_csv = geocode_dataframe("../data/per person/Sophie.csv")
+    coded_csv.to_csv("../qgis/data/Sophie.csv", index=False)
+
